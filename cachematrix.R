@@ -2,8 +2,8 @@
 ## existence of an inverse in the parent environment and calculating that 
 ## inverse if it is not found
 
-## This function creates the list of functions used to set and calculate the
-## inverse
+## This function creates the list of functions used to set and retrieve the
+## inverse and matrix
 
 makeCacheMatrix <- function(x = matrix()) {
     i <- NULL #initialize inverse as NULL w/in execution environment
@@ -24,7 +24,6 @@ makeCacheMatrix <- function(x = matrix()) {
 ## calculates it if it does not exist
 
 cacheSolve <- function(x, ...) {
-    ptm <- proc.time() # start timer for function
     i <- x$getinv() # get stored inverse value from pvs func if it exists
     ## next 4 lines return inverse if it exists
     if(!is.null(i)) {
